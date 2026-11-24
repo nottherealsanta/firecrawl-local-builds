@@ -122,7 +122,8 @@ scripts/build-local.sh
 ```
 
 That writes `dist/firecrawl-local-<os>-<arch>` and prints its SHA-256. It downloads dependencies into an isolated
-temporary `CARGO_HOME` by default; set `FC_CARGO_HOME` to reuse one.
+temporary `CARGO_HOME` by default; set `FC_CARGO_HOME` to reuse one. The script also needs `curl`, `tar`, `file`
+and Python 3 for the source checks.
 
 ## Updating the pinned version
 
