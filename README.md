@@ -54,6 +54,10 @@ On macOS use `shasum -a 256 -c -` instead of `sha256sum -c -`, and choose `firec
 `firecrawl-local-darwin-amd64`. A browser download may add the quarantine attribute; `curl` does not. If macOS
 refuses the binary, run `xattr -d com.apple.quarantine <path>` after checking the checksum.
 
+The arm64 macOS binary is ad-hoc signed by the linker; the Intel macOS binary is unsigned. Both were run on their
+native runners before the release. Neither is notarized by an Apple Developer ID, so verify `SHA256SUMS` and the
+attestation rather than relying on Gatekeeper.
+
 Verify the provenance record GitHub signed for the workflow run:
 
 ```sh

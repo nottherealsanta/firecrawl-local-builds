@@ -40,7 +40,7 @@ esac
 
 if [ -n "$asset" ]; then
   chmod +x "$asset"
-  "$asset" --version
+  "./$asset" --version
 fi
 
 echo "Verified $tag from $repo"

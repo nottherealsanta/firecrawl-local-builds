@@ -55,6 +55,9 @@ Security problems in Firecrawl Local itself belong upstream:
 - **Release assets are mutable to a repository administrator.** If an asset is replaced, its checksum changes too,
   and the old attestation no longer matches. `gh attestation verify` is the way to detect that: it checks the file
   against the attestation GitHub recorded for this repository.
+- **macOS code signing is ad-hoc only.** The arm64 binary is linker-signed and the Intel binary is unsigned.
+  Neither is notarized by an Apple Developer ID. Verify `SHA256SUMS` and the GitHub attestation instead of relying
+  on Gatekeeper alone.
 - **The binaries run with the user's privileges.** They are not sandboxed by this repository. Nexus starts the
   server with Firecrawl cloud hand-off off and public-address-only defaults; that is a Nexus policy, not a property
   of these builds.
